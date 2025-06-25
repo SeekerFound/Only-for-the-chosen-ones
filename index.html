@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Access Portal</title>
+</head>
+<body style="background-color: black; color: white; font-family: monospace; text-align: center; margin-top: 100px;">
+  <h1>Only for the Chosen One</h1>
+  <p>Enter the key of perception:</p>
+  <input type="password" id="pass" placeholder="Enter password">
+  <button onclick="check()">Enter</button>
+  <p id="message" style="color:red;"></p>
+
+  <script>
+    function check() {
+      const password = document.getElementById("pass").value;
+      if (password === "breathes") {
+        window.location.href = "truth.html";
+      } else {
+        document.getElementById("message").innerText = "Access Denied.";
+      }
+    }
+  </script>
+</body>
+</html>

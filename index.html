@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Access Portal</title>
+  <title>Only for the Chosen Ones</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 80px;
+    }
+    input, button {
+      padding: 8px;
+      font-family: monospace;
+      margin-top: 10px;
+    }
+    img {
+      margin-top: 40px;
+      max-width: 80%;
+      border: 2px solid white;
+    }
+  </style>
 </head>
-<body style="background-color: black; color: white; font-family: monospace; text-align: center; margin-top: 100px;">
-  <h1>Only for the Chosen One</h1>
-  <p>Enter the key of perception:</p>
-  <input type="password" id="pass" placeholder="Enter password">
-  <button onclick="check()">Enter</button>
-  <p id="message" style="color:red;"></p>
+<body>
+
+  <h1>Only for the Chosen Ones</h1>
+  <p>Enter the password to proceed.</p>
+
+  <input type="password" id="pwd" placeholder="Enter password">
+  <br>
+  <button onclick="check()">Submit</button>
+
+  <!-- Gambar steganografi ditampilkan -->
+  <img src="enigma_riddle3_stego.png" alt="What do you see?">
 
   <script>
     function check() {
-      const password = document.getElementById("pass").value;
-      if (password === "breathes") {
-        window.location.href = "truth.html";
+      const pwd = document.getElementById("pwd").value.trim().toLowerCase();
+      if (pwd === "breathes") {
+        window.location.href = "truth.html"; // redirect jika password benar
       } else {
-        document.getElementById("message").innerText = "Access Denied.";
+        alert("Wrong password.");
       }
     }
   </script>
+
 </body>
 </html>

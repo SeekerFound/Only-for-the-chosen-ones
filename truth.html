@@ -11,12 +11,11 @@
       padding-top: 100px;
     }
     input, button {
-      padding: 8px;
+      padding: 6px;
       font-family: monospace;
       margin-top: 10px;
     }
-    #hiddenContent {
-      display: none;
+    audio {
       margin-top: 30px;
     }
   </style>
@@ -25,15 +24,14 @@
   <h1>Enter the Password</h1>
   <p>This path is only revealed to those who listen in silence.</p>
 
-  <input type="password" id="pwd" placeholder="Enter password">
-  <br><br>
+  <input type="password" id="pwd" placeholder="Enter password"><br><br>
   <button onclick="check()">Submit</button>
 
-  <div id="hiddenContent">
-    <h2>☍ Transmission Received</h2>
-    <p>Decrypt the signal within...</p>
+  <div id="secret" style="display:none;">
+    <h2>Encrypted Message</h2>
+    <p>Listen closely. The answer hides in the waves.</p>
     <audio controls>
-      <source src="audio_stego_final.wav" type="audio/wav">
+      <source src="enigma_echo_stego_short.wav" type="audio/wav">
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -42,7 +40,7 @@
     function check() {
       const pwd = document.getElementById("pwd").value.trim().toLowerCase();
       if (pwd === "echo") {
-        document.getElementById("hiddenContent").style.display = "block";
+        document.getElementById("secret").style.display = "block";
       } else {
         alert("Wrong password.");
       }

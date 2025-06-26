@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The Breath</title>
+  <title>The Truth</title>
   <style>
     body {
       background-color: black;
@@ -10,21 +10,30 @@
       text-align: center;
       padding-top: 100px;
     }
+    input, button {
+      padding: 8px;
+      font-family: monospace;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>It dances in the stillness.</h1>
-  <p>Exists between two nothings.</p>
-  <p>The infant’s first cry, the elder’s last sigh—</p>
-  <p>Yet you never hold it, never see it, never end it.</p>
-  <p>It is not thought, not flesh, but what lies between.</p>
-  <p>It is not you, but without it, you are not.</p>
+  <h1>Enter the Password</h1>
+  <p>This path is only revealed to those who listen in silence.</p>
+
+  <input type="password" id="pwd" placeholder="Enter password">
   <br><br>
-  <p><strong>What breathes without lungs?</strong></p>
+  <button onclick="check()">Submit</button>
 
-  <!-- Riddle answer: breathes -->
-  <!-- Password: breathes -->
-  <!-- Optional: You can insert Enigma-encrypted message here as text or in a hidden div -->
-
+  <script>
+    function check() {
+      const pwd = document.getElementById("pwd").value.trim().toLowerCase();
+      if (pwd === "echo") {
+        window.location.href = "echo.html"; // Halaman tujuan jika password benar
+      } else {
+        alert("Wrong password.");
+      }
+    }
+  </script>
 </body>
 </html>

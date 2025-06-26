@@ -15,6 +15,10 @@
       font-family: monospace;
       margin-top: 10px;
     }
+    #hiddenContent {
+      display: none;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -25,11 +29,20 @@
   <br><br>
   <button onclick="check()">Submit</button>
 
+  <div id="hiddenContent">
+    <h2>☍ Transmission Received</h2>
+    <p>Decrypt the signal within...</p>
+    <audio controls>
+      <source src="audio_stego_final.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
   <script>
     function check() {
       const pwd = document.getElementById("pwd").value.trim().toLowerCase();
       if (pwd === "echo") {
-        window.location.href = "echo.html"; // Halaman tujuan jika password benar
+        document.getElementById("hiddenContent").style.display = "block";
       } else {
         alert("Wrong password.");
       }

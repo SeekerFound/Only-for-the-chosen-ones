@@ -27,13 +27,16 @@
   <input type="password" id="pwd" placeholder="Enter password"><br><br>
   <button onclick="check()">Submit</button>
 
+  <br><br>
+  <p>🔊 A whisper awaits below:</p>
+  <audio controls>
+    <source src="enigma_echo_stego_short.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
   <div id="secret" style="display:none;">
-    <h2>Encrypted Message</h2>
-    <p>Listen closely. The answer hides in the waves.</p>
-    <audio controls>
-      <source src="enigma_echo_stego_short.wav" type="audio/wav">
-      Your browser does not support the audio element.
-    </audio>
+    <h2>Access Granted</h2>
+    <p>The path continues...</p>
   </div>
 
   <script>

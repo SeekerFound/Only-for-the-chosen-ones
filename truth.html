@@ -1,80 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>🔒 Enter the Key</title>
+  <title>The Truth</title>
   <style>
     body {
       background-color: black;
-      color: #00ff00;
+      color: white;
       font-family: monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding-top: 40px;
-      min-height: 100vh;
       text-align: center;
+      padding-top: 100px;
     }
-
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    p {
-      margin: 5px 0;
-    }
-
-    img {
-      margin: 15px 0;
-      max-width: 90%;
-      border: 1px solid #00ff00;
-    }
-
     input, button {
-      background: black;
-      color: #00ff00;
-      border: 1px solid #00ff00;
-      padding: 6px 10px;
+      padding: 6px;
       font-family: monospace;
       margin-top: 10px;
     }
-
-    button {
-      cursor: pointer;
-    }
-
-    #message {
-      margin-top: 15px;
+    audio {
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
+  <h1>Enter the Password</h1>
+  <p>This path is only revealed to those who listen in silence.</p>
 
-  <h2>:: ACCESS LOCKED ::</h2>
-  <p>The answer lies beneath the image.</p>
+  <input type="password" id="pwd" placeholder="Enter password"><br><br>
+  <button onclick="check()">Submit</button>
 
-  <img src="enigma_riddle3_stego.png" alt="Puzzle Image">
+  <br><br>
+  <p>🔊 A whisper awaits below:</p>
+  <audio controls>
+    <source src="enigma_echo_stego_short.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
 
-  <p>Enter the key extracted from the image:</p>
-  <input type="password" id="pwd" placeholder="Enter password"><br>
-  <button onclick="check()">ENTER</button>
-
-  <div id="message"></div>
+  <div id="secret" style="display:none;">
+    <h2>Access Granted</h2>
+    <p>Redirecting to the next stage...</p>
+  </div>
 
   <script>
     function check() {
       const pwd = document.getElementById("pwd").value.trim().toLowerCase();
       if (pwd === "echo") {
-        document.getElementById("message").innerHTML = "<p style='color:lime;'>✅ Access Granted. Redirecting...</p>";
-        setTimeout(function() {
+        document.getElementById("secret").style.display = "block";
+        setTimeout(() => {
           window.location.href = "puzzle-level3.html";
-        }, 1500);
+        }, 1500); // delay 1.5 detik sebelum pindah
       } else {
-        document.getElementById("message").innerHTML = "<p style='color:red;'>❌ Wrong key.</p>";
+        alert("Wrong password.");
       }
     }
   </script>
-
 </body>
 </html>

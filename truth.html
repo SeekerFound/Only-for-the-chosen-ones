@@ -43,11 +43,11 @@
   <script>
     function check() {
       const pwd = document.getElementById("pwd").value.trim().toLowerCase();
-      if (pwd === "glow") {
+      if (pwd === "echo") {
         document.getElementById("secret").style.display = "block";
         setTimeout(function() {
           window.location.href = "puzzle-level3.html";
-        }, 2000); // Delay 2 detik sebelum redirect
+        }, 2000);
       } else {
         alert("❌ Wrong password.");
       }

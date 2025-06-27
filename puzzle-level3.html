@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>🔒 Enter the Key</title>
+  <meta charset="UTF-8">
+  <title>Enter the Key</title>
   <style>
     body {
       background-color: black;
       color: #00ff00;
       font-family: monospace;
       text-align: center;
-      padding-top: 80px;
+      padding-top: 60px;
     }
     img {
       margin-top: 30px;
+      border: 2px solid #00ff00;
       max-width: 90%;
       height: auto;
     }
     input, button {
+      background-color: black;
+      color: #00ff00;
+      border: 1px solid #00ff00;
       padding: 6px;
       font-family: monospace;
-      background-color: black;
-      border: 1px solid #00ff00;
-      color: #00ff00;
       margin-top: 10px;
     }
-    button {
+    button:hover {
+      background-color: #00ff00;
+      color: black;
       cursor: pointer;
     }
   </style>
@@ -32,7 +36,7 @@
   <h2>:: ACCESS LOCKED ::</h2>
   <p>The answer lies beneath the image.</p>
   
-  <img src="enigma_riddle3_stego.png" alt="Puzzle Image">
+  <img src="puzzle_noise.png" alt="Puzzle Image" width="800">
 
   <p>Enter the key extracted from the image:</p>
   <input type="password" id="pwd" placeholder="Enter password"><br>
@@ -42,9 +46,9 @@
     function check() {
       const pwd = document.getElementById("pwd").value.trim().toLowerCase();
       if (pwd === "dream") {
-        window.location.href = "truth.html"; // Ganti ke halaman berikutnya jika berbeda
+        window.location.href = "puzzle-level3.html";
       } else {
-        alert("❌ Wrong password.");
+        alert("Wrong password.");
       }
     }
   </script>

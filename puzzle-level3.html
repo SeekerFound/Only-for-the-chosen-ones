@@ -11,12 +11,14 @@
       text-align: center;
       padding-top: 60px;
     }
+
     img {
       margin-top: 30px;
       border: 2px solid #00ff00;
       max-width: 90%;
       height: auto;
     }
+
     input, button {
       background-color: black;
       color: #00ff00;
@@ -25,6 +27,7 @@
       font-family: monospace;
       margin-top: 10px;
     }
+
     button:hover {
       background-color: #00ff00;
       color: black;
@@ -35,8 +38,9 @@
 <body>
   <h2>:: ACCESS LOCKED ::</h2>
   <p>The answer lies beneath the image.</p>
-  
-  <img src="puzzle_noise.png" alt="Puzzle Image" width="800">
+
+  <!-- Ganti path ini sesuai lokasi gambar -->
+  <img src="images/puzzle_noise.png" alt="Puzzle Image" width="800">
 
   <p>Enter the key extracted from the image:</p>
   <input type="password" id="pwd" placeholder="Enter password"><br>
@@ -46,7 +50,7 @@
     function check() {
       const pwd = document.getElementById("pwd").value.trim().toLowerCase();
       if (pwd === "dream") {
-        window.location.href = "puzzle-level3.html";
+        window.location.href = "puzzle-level4.html";
       } else {
         alert("Wrong password.");
       }

@@ -21,6 +21,7 @@
   </style>
 </head>
 <body>
+
   <h1>Enter the Password</h1>
   <p>This path is only revealed to those who listen in silence.</p>
 
@@ -28,26 +29,30 @@
   <button onclick="check()">Submit</button>
 
   <br><br>
-  <p>🔊 A whisper awaits below:</p>
+  🔊 <p>A whisper awaits below:</p>
   <audio controls>
     <source src="enigma_echo_stego_short.wav" type="audio/wav">
     Your browser does not support the audio element.
   </audio>
 
   <div id="secret" style="display:none;">
-    <h2>Access Granted</h2>
+    <h2>✅ Access Granted</h2>
     <p>The path continues...</p>
   </div>
 
   <script>
     function check() {
       const pwd = document.getElementById("pwd").value.trim().toLowerCase();
-      if (pwd === "echo") {
+      if (pwd === "glow") {
         document.getElementById("secret").style.display = "block";
+        setTimeout(function() {
+          window.location.href = "puzzle-level3.html";
+        }, 2000); // Delay 2 detik sebelum redirect
       } else {
-        alert("Wrong password.");
+        alert("❌ Wrong password.");
       }
     }
   </script>
+
 </body>
 </html>

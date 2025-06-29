@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Final Answer</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .glow {
+      font-size: 2em;
+      text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      margin-bottom: 30px;
+    }
+
+    .message {
+      font-size: 1.1em;
+      line-height: 1.8;
+      max-width: 600px;
+      opacity: 0.9;
+    }
+
+    .highlight {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow fade-in">The Final Answer</div>
+  <div class="message fade-in" style="animation-delay: 1s; animation-fill-mode: both;">
+    Most turned back.<br>
+    But not you.<br><br>
+
+    You saw what others missed.<br><br>
+
+    Now… one final task remains.<br><br>
+
+    <span class="highlight">Clue:</span> <code>Password</code><br><br>
+
+    Uncover the answer to the final riddle — and prove you're truly one of the chosen.<br><br>
+
+    When you're ready...<br>
+    <span class="highlight">Contact me:</span> <a href="mailto:seekerfound45@gmail.com">seekerfound45@gmail.com</a>
+  </div>
+</body>
+</html>

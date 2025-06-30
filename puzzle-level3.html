@@ -13,6 +13,12 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      text-align: center;
+    }
+    img {
+      margin-bottom: 20px;
+      border: 2px solid #0f0;
+      width: 300px;
     }
     input, button {
       margin-top: 10px;
@@ -28,6 +34,10 @@
 </head>
 <body>
   <h2>Only for the chosen ones</h2>
+
+  <!-- 🔍 Gambar steganografi -->
+  <img src="enigma_riddle3_stego.png" alt="Hidden Clue">
+
   <p>Enter the final password:</p>
   <input type="password" id="passwordInput" placeholder="your answer here">
   <button onclick="checkPassword()">Submit</button>
@@ -35,7 +45,7 @@
   <script>
     function checkPassword() {
       const password = document.getElementById("passwordInput").value.trim().toLowerCase();
-      const correctPassword = "dream"; // password final kamu
+      const correctPassword = "dream"; // password rahasia kamu
 
       if (password === correctPassword) {
         window.location.href = "the-final-answer.html";

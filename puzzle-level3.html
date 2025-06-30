@@ -2,57 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Enter the Key</title>
+  <title>Puzzle Level 3</title>
   <style>
     body {
-      background-color: black;
-      color: #00ff00;
-      font-family: monospace;
-      text-align: center;
-      padding-top: 60px;
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-
-    img {
-      margin-top: 30px;
-      border: 2px solid #00ff00;
-      max-width: 90%;
-      height: auto;
-    }
-
     input, button {
-      background-color: black;
-      color: #00ff00;
-      border: 1px solid #00ff00;
-      padding: 6px;
-      font-family: monospace;
       margin-top: 10px;
+      padding: 8px;
+      background-color: #111;
+      color: #0f0;
+      border: 1px solid #0f0;
     }
-
-    button:hover {
-      background-color: #00ff00;
-      color: black;
-      cursor: pointer;
+    h2 {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <h2>:: ACCESS LOCKED ::</h2>
-  <p>The answer lies beneath the image.</p>
-
-  <!-- Gambar yang benar ditampilkan di sini -->
-  <img src="anti_ai_embedded_dna%20(1).png" alt="Puzzle Image" width="800">
-
-  <p>Enter the key extracted from the image:</p>
-  <input type="password" id="pwd" placeholder="Enter password"><br>
-  <button onclick="check()">ENTER</button>
+  <h2>Only for the chosen ones</h2>
+  <p>Enter the final password:</p>
+  <input type="password" id="passwordInput" placeholder="your answer here">
+  <button onclick="checkPassword()">Submit</button>
 
   <script>
-    function check() {
-      const pwd = document.getElementById("pwd").value.trim().toLowerCase();
-      if (pwd === "dream") {
-        window.location.href = "puzzle-level4.html";
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value.trim().toLowerCase();
+      const correctPassword = "dream"; // password final kamu
+
+      if (password === correctPassword) {
+        window.location.href = "the-final-answer.html";
       } else {
-        alert("Wrong password.");
+        alert("Wrong answer. Think deeper.");
       }
     }
   </script>

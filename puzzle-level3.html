@@ -8,15 +8,11 @@
       background-color: #000;
       color: #0f0;
       font-family: 'Courier New', Courier, monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       text-align: center;
+      padding-top: 60px; /* Lebih ke atas */
     }
     img {
-      margin-bottom: 20px;
+      margin: 20px 0;
       border: 2px solid #0f0;
       width: 300px;
     }
@@ -35,22 +31,23 @@
 <body>
   <h2>Only for the chosen ones</h2>
 
-  <!-- 🔍 Gambar steganografi -->
-  <img src="enigma_riddle3_stego.png" alt="Hidden Clue">
+  <!-- Gambar noise benar -->
+  <img src="anti_ai_embedded_dna.png" alt="Clue">
 
   <p>Enter the final password:</p>
   <input type="password" id="passwordInput" placeholder="your answer here">
+  <br>
   <button onclick="checkPassword()">Submit</button>
 
   <script>
     function checkPassword() {
       const password = document.getElementById("passwordInput").value.trim().toLowerCase();
-      const correctPassword = "dream"; // password rahasia kamu
+      const correctPassword = "dream";
 
       if (password === correctPassword) {
         window.location.href = "the-final-answer.html";
       } else {
-        alert("Wrong answer. Think deeper.");
+        alert("Wrong answer. Try again.");
       }
     }
   </script>
